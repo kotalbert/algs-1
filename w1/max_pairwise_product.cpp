@@ -5,37 +5,35 @@ using std::vector;
 using std::cin;
 using std::cout;
 
-typedef unsigned long ulong;
+typedef long long ll;
 
-ulong mpp(vector<ulong>& nums) {
-    int fi = 0; // index of first largest 
-    int si = 0; // index of second largest
+ll mpp(vector<ll>& v) {
+    
+    ll first = -1;
+    ll second = -1;
 
-    // find index of first largest element
-    for (int i=1; i<nums.size(); i++) {
-        if (nums[i]>nums[fi]) {
-            fi = i;
+    for (int i=0; i<v.size(); i++) {
+        if (v[i] > first) {
+            second = first;
+            first = v[i];
+        }
+        else if (v[i] > second) {
+            second = v[i];
         }
     }
 
-    // find index of second largest element
-    for (int i=1; i<nums.size(); i++) {
-        if (i == fi) continue;
-        else if (nums[i] > nums[si]) si = i;
-    }
-    
-    return nums[fi] * nums[si];
+    return first * second;
 }
 
 int main() {
     int n;
     cin >> n;
-    vector<ulong> numbers(n);
+    vector<ll> numbers(n);
     for (int i = 0; i < n; ++i) {
         cin >> numbers[i];
     }
     
-    ulong result = mpp(numbers);
+    ll result = mpp(numbers);
 
     cout << result << "\n";
     return 0;
