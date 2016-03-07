@@ -19,27 +19,10 @@ int get_fibonacci_last_digit(int n) {
     return v[n];
 }
 
-void print_fld(int n) {
-    cout << n << '\t' << get_fibonacci_last_digit(n) << '\n';
-}
-
-void fld_st() {
-    print_fld(0);
-    print_fld(3);
-    print_fld(327305);
-    print_fld(10000000);
-
-    while (true) {
-        size_t r = std::rand() % 10000000;
-        print_fld(r);
-    }
-
-}
 
 int main() {
-    fld_st();
-  //int n;
-  //std::cin >> n;
-  //int c = get_fibonacci_last_digit(n);
-  //std::cout << c << '\n';
+  int n;
+  std::cin >> n;
+  int c = get_fibonacci_last_digit(n);
+  std::cout << c << '\n';
 }

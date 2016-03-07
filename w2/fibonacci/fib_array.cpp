@@ -16,17 +16,11 @@ long long fib_array(int n) {
     return a[n];
 }
 
-void test_fib() {
-    cout << "Enter number \n";
+
+int main() {
     int n;
     cin >> n;
     cout << fib_array(n)<<'\n';
-
-}
-
-int main() {
-    
-    test_fib();
     return 0;
 
 }
